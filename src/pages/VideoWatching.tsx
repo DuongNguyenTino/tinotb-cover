@@ -146,8 +146,11 @@ const VideoWatching = () => {
                         <Grid container spacing={4} sx={{
                             overflowX: 'hidden',
                         }}>
-                            <Grid item={true} xs={12} sm={12} md={7} lg={8} sx={{
-                                mb: 8,
+                            <Grid item={true} xs={12} sm={12} md={8} lg={8} sx={{
+                                mb: {
+                                    md: 8,
+                                    xs: 0
+                                },
                                 maxWidth: '100%',
                             }}
                             >
@@ -177,10 +180,21 @@ const VideoWatching = () => {
                                     <Box sx={{
                                         display: 'flex',
                                         alignItems: 'center',
+                                        flexDirection: {
+                                            sm: 'row',
+                                            xs: 'column',
+                                        },
                                         justifyContent: 'space-between',
                                     }}>
                                         <Typography sx={{
-                                            fontSize: '1.1em',
+                                            fontSize: {
+                                                md: '1.1em',
+                                                xs: '0.9em'
+                                            },
+                                            mb: {
+                                                md: 0,
+                                                xs: 2
+                                            },
                                             color: 'primaryText',
                                             textDecoration: 'none',
                                             transition: 'all 0.2s ease-in-out',
@@ -189,7 +203,7 @@ const VideoWatching = () => {
                                             },
                                         }}
                                             component={Link}
-                                            to={`channel/${dataVideo.snippet.channelId}`}
+                                            to={`/channel/${dataVideo.snippet.channelId}`}
                                         >
                                             {dataVideo.snippet.channelTitle}
                                         </Typography>
@@ -202,7 +216,10 @@ const VideoWatching = () => {
                                                 color: 'secondText',
                                                 display: 'flex',
                                                 alignItems: 'center',
-                                                mr: 4,
+                                                mr: {
+                                                    lg: 4,
+                                                    xs: 1
+                                                },
                                                 backgroundColor: 'backgroundInput',
                                                 padding: 1,
                                                 borderRadius: '20px',
@@ -221,7 +238,10 @@ const VideoWatching = () => {
                                                 color: 'secondText',
                                                 display: 'flex',
                                                 alignItems: 'center',
-                                                mr: 4,
+                                                mr: {
+                                                    lg: 4,
+                                                    xs: 1
+                                                },
                                                 backgroundColor: 'backgroundInput',
                                                 padding: 1,
                                                 borderRadius: '20px',
@@ -261,19 +281,26 @@ const VideoWatching = () => {
                                         backgroundColor: themeMode === 'dark' ? '#3a3b3c' : '#ffffff',
                                         padding: '1em',
                                         pb: 3,
-                                        borderRadius: '10px'
+                                        borderRadius: '10px',
+                                        display: {
+                                            sm: 'inline-block',
+                                            xs: 'none'
+                                        },
                                     }}>
                                         <Typography sx={{
                                             fontSize: '0.9em',
                                             color: 'secondText',
+
                                         }}>
                                             {convert.countContact(dataVideo.statistics.viewCount) + ' lượt xem - ' + convert.TimeoutVideo(dataVideo.snippet.publishedAt) + ' trước'}
                                         </Typography>
                                         <Typography sx={{
                                             color: 'secondText',
-
                                             maxWidth: '100%',
-                                            display: isLoadMoredescription ? 'block' : '-webkit-box',
+                                            display: {
+                                                sm: isLoadMoredescription ? 'block' : '-webkit-box',
+                                                xs: 'none'
+                                            },
                                             WebkitBoxOrient: 'vertical',
                                             WebkitLineClamp: 2,
                                             overflow: 'hidden',
@@ -293,6 +320,10 @@ const VideoWatching = () => {
                                             right: '1em',
                                             fontSize: '0.9em',
                                             cursor: 'pointer',
+                                            display: {
+                                                sm: 'inline-block',
+                                                xs: 'none'
+                                            },
                                             "&:hover": {
                                                 textDecoration: 'underline',
                                             },
@@ -307,7 +338,7 @@ const VideoWatching = () => {
                                     </Box>
                                 </Box>
                             </Grid>
-                            <Grid item={true} xs={12} sm={12} md={5} lg={4} sx={{
+                            <Grid item={true} xs={12} sm={12} md={4} lg={4} sx={{
                             }}>
                                 {
                                     listSearch.map((item: any, i: any) => (

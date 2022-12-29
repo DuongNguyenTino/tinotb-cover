@@ -24,7 +24,11 @@ const Footer = () => {
                 </Link>
                 <Typography color='primaryText'
                     sx={{
-                        userSelect: 'none'
+                        userSelect: 'none',
+                        fontSize: {
+                            md: '1em',
+                            xs: '0.9em'
+                        }
                     }}
                 >
                     chúc bạn xem video vui vẻ !

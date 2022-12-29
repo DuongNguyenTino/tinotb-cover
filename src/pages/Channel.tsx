@@ -71,7 +71,11 @@ const Channel = () => {
         <>
             <Box sx={{
                 mt: 12,
-                mx: 14,
+                mx: {
+                    md: 14,
+                    sm: 8,
+                    xs: 2
+                },
             }}
             >
                 {dataChannel.snippet &&
@@ -96,7 +100,11 @@ const Channel = () => {
                                         width: dataChannel.snippet.thumbnails.default.width,
                                         height: dataChannel.snippet.thumbnails.default.height,
                                         borderRadius: '50%',
-                                        mr: 3
+                                        mr: 3,
+                                        display: {
+                                            md: 'inline-block',
+                                            xs: 'none'
+                                        }
                                     }}
                                 />
                                 <Box sx={{
@@ -106,11 +114,29 @@ const Channel = () => {
                                 }}>
                                     <Typography sx={{
                                         color: 'primaryText',
-                                        fontSize: '1.4em'
+                                        fontSize: {
+                                            md: '1.4em',
+                                            sm: '1.2em',
+                                            xs: '1em'
+                                        },
+                                        width: {
+                                            sm: 'auto',
+                                            xs: '50vw',
+                                        },
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        whiteSpace: 'nowrap'
                                     }}>{dataChannel.snippet.title}</Typography>
                                     <Typography sx={{
                                         color: 'secondText',
-                                        fontSize: '0.9em'
+                                        fontSize: '0.9em',
+                                        width: {
+                                            sm: 'auto',
+                                            xs: '50vw',
+                                        },
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        whiteSpace: 'nowrap'
                                     }}>{dataChannel.snippet.customUrl}</Typography>
                                     <Typography sx={{
                                         color: 'secondText',
@@ -135,7 +161,10 @@ const Channel = () => {
                         <Typography sx={{
                             mt: 3,
                             maxWidth: '100%',
-                            display: isMoreDes ? 'block' : '-webkit-box',
+                            display: {
+                                md: isMoreDes ? 'block' : '-webkit-box',
+                                xs: 'none'
+                            },
                             WebkitBoxOrient: 'vertical',
                             WebkitLineClamp: 2,
                             overflow: 'hidden',
@@ -150,6 +179,10 @@ const Channel = () => {
                             ))}
                         </Typography>
                         <Typography sx={{
+                            display: {
+                                md: 'inline-block',
+                                xs: 'none'
+                            },
                             color: 'primaryText',
                             fontSize: '0.9em',
                             cursor: 'pointer',
