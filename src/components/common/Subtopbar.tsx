@@ -59,7 +59,10 @@ export default function Subtopbar(props: Props) {
         <>
             <ScrollAppbar {...props}>
                 <AppBar sx={{
-                    marginTop: '67px',
+                    marginTop: {
+                        sm: '67px',
+                        xs: '60px'
+                    },
                     paddingX: '10px',
                     height: '3em',
                     backgroundColor: 'background'
